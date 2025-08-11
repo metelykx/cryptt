@@ -10,6 +10,8 @@ import SwiftUI
 struct ButtonView: View {
     
     let size: CGSize
+    
+    //MARK: View
     var body: some View {
         Button {
             print("Sign Up tapped")
