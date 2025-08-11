@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct RecordView: View {
+    //for get and post info for data
     @Environment(\.managedObjectContext) var contexView
     
-    
-    //who is it??
+    //MARK: Request Data
     @FetchRequest(
         entity: Item.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.date, ascending: false)]
@@ -20,6 +20,7 @@ struct RecordView: View {
     
     @State var isTrue = false
     
+    //MARK: View
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
