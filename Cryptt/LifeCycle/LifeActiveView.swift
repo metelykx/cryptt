@@ -15,6 +15,7 @@ struct LifeActiveView: View {
     private var colors: Color {
         colorScheme == .dark ? Color.white : Color.black
     }
+    
     var body: some View {
         ZStack {
             GeometryReader { geometry in
@@ -25,6 +26,11 @@ struct LifeActiveView: View {
                         .bold()
                         .fontWidth(.compressed)
                         .foregroundStyle(colors)
+                    
+                    Image(systemName: "bitcoinsign.bank.building.fill")
+                        .resizable()
+                        .frame(width: geometry.size.width / 10, height: geometry.size.height / 20)
+                        .foregroundStyle(.yellow)
                 }
             }
         }
