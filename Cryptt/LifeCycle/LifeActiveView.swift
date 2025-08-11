@@ -11,11 +11,13 @@ import SwiftUI
 struct LifeActiveView: View {
     var body: some View {
         ZStack {
-            Text("LifeActiveView")
+            GeometryReader { geometry in
+                
+                Text("LifeActiveView")
+            }
         }
     }
 }
-
 #Preview {
     LifeActiveView()
 }
