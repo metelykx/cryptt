@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    //MARK: View
     var body: some View {
         TabView {
             StaticView()
