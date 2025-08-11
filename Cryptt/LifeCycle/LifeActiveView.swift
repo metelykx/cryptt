@@ -14,7 +14,7 @@ struct LifeActiveView: View {
             GeometryReader { geometry in
                 
                 HStack {
-                    
+                    Text("CryptoGraf")
                 }
             }
         }
