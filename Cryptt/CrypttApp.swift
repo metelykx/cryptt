@@ -31,11 +31,13 @@ struct CrypttApp: App {
                     .animation(.default, value: isActive)
             }
         }.onChange(of: scenePhase) { newValue in
-            switch newValue{
+            switch newValue {
             case .active:
                 self.isActive = true
             case .inactive:
                 self.isActive = false
+            @unknown default:
+                break
             }
         }
     }
