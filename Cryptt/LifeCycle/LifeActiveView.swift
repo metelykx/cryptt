@@ -15,6 +15,7 @@ struct LifeActiveView: View {
                 
                 HStack {
                     Text("CryptoGraf")
+                    
                 }
             }
         }
