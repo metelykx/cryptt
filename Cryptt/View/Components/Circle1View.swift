@@ -11,7 +11,7 @@ struct Circle1View: View {
     let size: CGSize
     var body: some View {
         Circle()
-            .fill(Color.gray.opacity(0.2))
+            .fill(Color.gray.opacity(0.3))
             .frame(width: size.width / 2, height: size.height / 2)
             .rotationEffect(.init(degrees: 45))
             .offset(
