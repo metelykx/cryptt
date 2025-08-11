@@ -12,8 +12,8 @@ struct LifeActiveView: View {
     
     @Environment(\.colorScheme) private var colorScheme
     
-    private var colors: {
-        
+    private var colors: Color {
+        colorScheme == .dark ? Color.white : Color.black
     }
     var body: some View {
         ZStack {
