@@ -32,7 +32,7 @@ struct LifeActiveView: View {
                             .frame(width: geometry.size.width / 10, height: geometry.size.height / 20)
                             .foregroundStyle(.yellow)
                     }.position(x: geometry.size.width / 2, y: geometry.size.height / 2)
-                }
+                }.frame(width: geometry.size.width, height: geometry.size.height)
             }
         }
     }
