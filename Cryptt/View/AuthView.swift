@@ -33,6 +33,7 @@ struct AuthView: View {
         colorScheme == .dark ? .black : .white
     }
     
+    //MARK: View
     var body: some View {
         ZStack {
             GeometryReader { geometry in
