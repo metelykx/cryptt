@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LifeActiveView: View {
     
-    
+    @Environment(\.colorScheme) private var colorScheme
     
     private var colors: {
         
