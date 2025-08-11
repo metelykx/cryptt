@@ -17,10 +17,11 @@ struct CrypttApp: App {
     @Environment(\.scenePhase) var scenePhase
     @State private var isActive: Bool = false
     
+    
+    //MARK: Views and Cycle
     var body: some Scene {
         WindowGroup {
             ZStack {
-                
                 
                 RecordView()
                     .opacity(isActive ? 1 : 0)
