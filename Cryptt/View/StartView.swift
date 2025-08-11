@@ -18,7 +18,7 @@ struct StartView: View {
     }
     
     private var colorsText: Color {
-        colorScheme == .dark ? .white : .black
+        colorScheme == .dark ? .black : .white
     }
     
     @State private var name: String = ""
