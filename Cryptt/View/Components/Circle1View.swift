@@ -8,7 +8,10 @@
 import SwiftUI
  
 struct Circle1View: View {
+    
     let size: CGSize
+    
+    //MARK: View
     var body: some View {
         Circle()
             .fill(Color.gray.opacity(0.3))
