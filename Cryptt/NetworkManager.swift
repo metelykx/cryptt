@@ -5,4 +5,8 @@
 //  Created by Denis Ivaschenko on 11.08.2025.
 //
 
-import Foundation 
+import Foundation
+
+class NetworkManager: ObservableObject {
+    
+}
