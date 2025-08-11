@@ -10,12 +10,14 @@ import SwiftUI
 
 struct LifeActiveView: View {
     
+    //MARK: colors
     @Environment(\.colorScheme) private var colorScheme
     
     private var colors: Color {
         colorScheme == .dark ? Color.white : Color.black
     }
     
+    //MARK: View
     var body: some View {
         ZStack {
             GeometryReader { geometry in
