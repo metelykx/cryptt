@@ -17,12 +17,21 @@ struct StartView: View {
         colorScheme == .dark ? .white : .black
     }
     
-    @State var name: String = ""
-    @State var password: String = ""
-    @State var isError: String? = nil
-    @State var isAuth: Bool = false
+    private var colorsText: Color {
+        colorScheme == .dark ? .white : .black
+    }
     
-   
+    @State private var name: String = ""
+    @State private var password: String = ""
+    @State private var isError: String? = nil
+    @State private var isAuth: Bool = false
+    
+    // Управление фокусом
+    enum FocusField: Hashable {
+        case name, password
+    }
+    @FocusState private var focusedField: FocusField?
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -31,8 +40,9 @@ struct StartView: View {
                     Circle1View(size: geometry.size)
                     Circle2View(size: geometry.size)
                     
-                    VStack(alignment: .center){
+                    VStack(alignment: .center) {
                         Spacer()
+                        
                         HStack(alignment: .center) {
                             Text("Crypto")
                                 .font(.title)
@@ -46,58 +56,59 @@ struct StartView: View {
                                 .foregroundStyle(.yellow)
                         }
                         
-                        ZStack{
-                            Rectangle()
-                                .fill(Color.gray.opacity(0.2))
-                                .frame(width: geometry.size.width/1.1, height: geometry.size.height/6)
-                                .cornerRadius(20)
-                            
-                            VStack {
-                                HStack {
-                                    Image(systemName: "person.fill")
-                                        .foregroundStyle(colors)
-                                    Text("Name")
-                                        .foregroundStyle(colors)
-                                        .font(.headline)
-                                    TextField("", text: $name)
-                                    
-                                }.padding(.bottom)
-                                    .padding(.horizontal)
-                                    .padding(.leading)
-                                    .padding(.trailing)
-                                
-                                HStack {
-                                    Image(systemName: "lock.fill").foregroundStyle(colors)
-                                    Text("Password")
-                                        .foregroundStyle(colors)
-                                        .font(.headline)
-                                    SecureField("", text: $password)
-                                    
-                                }
-                                .padding(.bottom)
-                                .padding(.horizontal)
-                                .padding(.leading)
-                                .padding(.trailing)
-                          
+                        // MARK: - Updated Input Fields
+                        VStack(spacing: 20) {
+                            // Поле имени
+                            HStack {
+                                Image(systemName: "person.fill")
+                                    .foregroundStyle(colorsText)
+                                Text("Name")
+                                    .font(.headline)
+                                    .fontWeight(.medium)
+                                    .foregroundStyle(colorsText)
+                                TextField("Enter your name", text: $name)
+                                    .focused($focusedField, equals: .name)
+                                    .onTapGesture {
+                                        focusedField = .name
+                                    }
                             }
-                           
+                            .authInputStyle()
+                            
+                            // Поле пароля
+                            HStack {
+                                Image(systemName: "lock.fill")
+                                    .foregroundStyle(colorsText)
+                                Text("Password")
+                                    .font(.headline)
+                                    .fontWeight(.medium)
+                                    .foregroundStyle(colorsText)
+                                SecureField("Enter password", text: $password)
+                                    .focused($focusedField, equals: .password)
+                                    .onTapGesture {
+                                        focusedField = .password
+                                    }
+                            }
+                            .authInputStyle()
                         }
+                        .padding(.horizontal, 24)
+                        .padding(.top, 30)
+                        
                         NavigationLink {
                             AuthView()
                         } label: {
                             Text("Sign Up")
-                        }.padding(.top, -geometry.size.height / 50)
-                        .padding(.top)
+                                .foregroundStyle(colors)
+                        }
+                        .padding(.top, 10)
                         
-                        //MARK: Mistake
+                        // MARK: - Error Display
                         if let error = isError {
                             Text(error)
                                 .font(.callout)
-                                .padding(.top)
-                                .foregroundStyle(.red)
+                                .padding(.top, 10)
+                                .foregroundColor(.red)
                         }
                        
-                        
                         Button {
                             auth()
                         } label: {
@@ -105,17 +116,22 @@ struct StartView: View {
                                 .font(.headline)
                                 .frame(maxWidth: .infinity)
                                 .padding(.vertical, geometry.size.height * 0.03)
+                                .foregroundColor(.white)
                         }
-                        .background(Color.gray.opacity(0.2))
+                        .background(Color.blue)
                         .cornerRadius(12)
                         .padding(.horizontal, geometry.size.width * 0.2)
                         .padding(.top, geometry.size.height * 0.03)
                         
                         Spacer()
-                    }.padding(.top, -geometry.size.height * 0.2)
-                    
+                    }
                 }
-                
+            }
+            .background(Color.primary)
+            .onTapGesture {
+                if focusedField != nil {
+                    focusedField = nil
+                }
             }
         }
         .navigationDestination(isPresented: $isAuth) {
@@ -123,9 +139,8 @@ struct StartView: View {
         }
     }
     
-    //MARK: Functions
+    // MARK: Functions
     private func auth() {
-        
         guard !name.isEmpty else {
             isError = "Name cannot be empty"
             return
@@ -142,19 +157,18 @@ struct StartView: View {
                 password
             )
         
-        //do request
         do {
-          let users = try managedObjectContextt.fetch(request)
+            let users = try managedObjectContextt.fetch(request)
                 
-          if users.isEmpty {
-             isError = "Invalid credentials"
-             } else {
+            if users.isEmpty {
+                isError = "Invalid credentials"
+            } else {
                 isError = nil
                 isAuth = true
-             }
-            } catch {
-                isError = "Database error: \(error.localizedDescription)"
             }
+        } catch {
+            isError = "Database error: \(error.localizedDescription)"
+        }
     }
 }
 
