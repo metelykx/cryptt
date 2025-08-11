@@ -22,10 +22,12 @@ struct CrypttApp: App {
                 RecordView()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .opacity(isActive ? 1 : 0)
+                    .animation(.default, value: isActive)
                 
                 
                 LifeActiveView()
                     .opacity(isActive ? 0 : 1)
+                    .animation(.default, value: isActive)
             }
         }
     }
