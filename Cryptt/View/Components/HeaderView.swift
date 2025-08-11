@@ -14,7 +14,7 @@ struct HeaderView: View {
    
     var body: some View {
         HStack {
-            Text("Welcome to Crypt")
+            Text("Welcome to CryptoGraf")
                 .font(.title)
                 .bold()
                 .fontWidth(.compressed)
