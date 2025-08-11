@@ -12,6 +12,7 @@ struct CrypttApp: App {
     let persistenceController = PersistenceController.shared
     
     @Environment(\.scenePhase) var scenePhase
+    @State private var isActive: Bool = false
     
     var body: some Scene {
         WindowGroup {
