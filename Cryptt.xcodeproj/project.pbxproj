@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		CC3D4AA92E49CB4500C62E73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC3D4A8B2E49CB4200C62E73 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC3D4A922E49CB4200C62E73;
+			remoteInfo = Cryptt;
+		};
+		CC3D4AB32E49CB4500C62E73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC3D4A8B2E49CB4200C62E73 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC3D4A922E49CB4200C62E73;
+			remoteInfo = Cryptt;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CC3D4A932E49CB4200C62E73 /* Cryptt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cryptt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC3D4AA82E49CB4500C62E73 /* CrypttTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrypttTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC3D4AB22E49CB4500C62E73 /* CrypttUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrypttUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		CC3D4A952E49CB4200C62E73 /* Cryptt */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Cryptt;
+			sourceTree = "<group>";
+		};
+		CC3D4AAB2E49CB4500C62E73 /* CrypttTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = CrypttTests;
+			sourceTree = "<group>";
+		};
+		CC3D4AB52E49CB4500C62E73 /* CrypttUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = CrypttUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CC3D4A902E49CB4200C62E73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC3D4AA52E49CB4500C62E73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC3D4AAF2E49CB4500C62E73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CC3D4A8A2E49CB4200C62E73 = {
+			isa = PBXGroup;
+			children = (
+				CC3D4A952E49CB4200C62E73 /* Cryptt */,
+				CC3D4AAB2E49CB4500C62E73 /* CrypttTests */,
+				CC3D4AB52E49CB4500C62E73 /* CrypttUITests */,
+				CC3D4A942E49CB4200C62E73 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CC3D4A942E49CB4200C62E73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CC3D4A932E49CB4200C62E73 /* Cryptt.app */,
+				CC3D4AA82E49CB4500C62E73 /* CrypttTests.xctest */,
+				CC3D4AB22E49CB4500C62E73 /* CrypttUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CC3D4A922E49CB4200C62E73 /* Cryptt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC3D4ABC2E49CB4500C62E73 /* Build configuration list for PBXNativeTarget "Cryptt" */;
+			buildPhases = (
+				CC3D4A8F2E49CB4200C62E73 /* Sources */,
+				CC3D4A902E49CB4200C62E73 /* Frameworks */,
+				CC3D4A912E49CB4200C62E73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				CC3D4A952E49CB4200C62E73 /* Cryptt */,
+			);
+			name = Cryptt;
+			packageProductDependencies = (
+			);
+			productName = Cryptt;
+			productReference = CC3D4A932E49CB4200C62E73 /* Cryptt.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CC3D4AA72E49CB4500C62E73 /* CrypttTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC3D4ABF2E49CB4500C62E73 /* Build configuration list for PBXNativeTarget "CrypttTests" */;
+			buildPhases = (
+				CC3D4AA42E49CB4500C62E73 /* Sources */,
+				CC3D4AA52E49CB4500C62E73 /* Frameworks */,
+				CC3D4AA62E49CB4500C62E73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC3D4AAA2E49CB4500C62E73 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CC3D4AAB2E49CB4500C62E73 /* CrypttTests */,
+			);
+			name = CrypttTests;
+			packageProductDependencies = (
+			);
+			productName = CrypttTests;
+			productReference = CC3D4AA82E49CB4500C62E73 /* CrypttTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CC3D4AB12E49CB4500C62E73 /* CrypttUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC3D4AC22E49CB4500C62E73 /* Build configuration list for PBXNativeTarget "CrypttUITests" */;
+			buildPhases = (
+				CC3D4AAE2E49CB4500C62E73 /* Sources */,
+				CC3D4AAF2E49CB4500C62E73 /* Frameworks */,
+				CC3D4AB02E49CB4500C62E73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC3D4AB42E49CB4500C62E73 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CC3D4AB52E49CB4500C62E73 /* CrypttUITests */,
+			);
+			name = CrypttUITests;
+			packageProductDependencies = (
+			);
+			productName = CrypttUITests;
+			productReference = CC3D4AB22E49CB4500C62E73 /* CrypttUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CC3D4A8B2E49CB4200C62E73 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					CC3D4A922E49CB4200C62E73 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					CC3D4AA72E49CB4500C62E73 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = CC3D4A922E49CB4200C62E73;
+					};
+					CC3D4AB12E49CB4500C62E73 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = CC3D4A922E49CB4200C62E73;
+					};
+				};
+			};
+			buildConfigurationList = CC3D4A8E2E49CB4200C62E73 /* Build configuration list for PBXProject "Cryptt" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CC3D4A8A2E49CB4200C62E73;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = CC3D4A942E49CB4200C62E73 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CC3D4A922E49CB4200C62E73 /* Cryptt */,
+				CC3D4AA72E49CB4500C62E73 /* CrypttTests */,
+				CC3D4AB12E49CB4500C62E73 /* CrypttUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CC3D4A912E49CB4200C62E73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC3D4AA62E49CB4500C62E73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC3D4AB02E49CB4500C62E73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CC3D4A8F2E49CB4200C62E73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC3D4AA42E49CB4500C62E73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC3D4AAE2E49CB4500C62E73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CC3D4AAA2E49CB4500C62E73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC3D4A922E49CB4200C62E73 /* Cryptt */;
+			targetProxy = CC3D4AA92E49CB4500C62E73 /* PBXContainerItemProxy */;
+		};
+		CC3D4AB42E49CB4500C62E73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC3D4A922E49CB4200C62E73 /* Cryptt */;
+			targetProxy = CC3D4AB32E49CB4500C62E73 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CC3D4ABA2E49CB4500C62E73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CC3D4ABB2E49CB4500C62E73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CC3D4ABD2E49CB4500C62E73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Cryptt/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "press-f.Cryptt";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CC3D4ABE2E49CB4500C62E73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Cryptt/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "press-f.Cryptt";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CC3D4AC02E49CB4500C62E73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "press-f.CrypttTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cryptt.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cryptt";
+			};
+			name = Debug;
+		};
+		CC3D4AC12E49CB4500C62E73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "press-f.CrypttTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cryptt.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cryptt";
+			};
+			name = Release;
+		};
+		CC3D4AC32E49CB4500C62E73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "press-f.CrypttUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Cryptt;
+			};
+			name = Debug;
+		};
+		CC3D4AC42E49CB4500C62E73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "press-f.CrypttUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Cryptt;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CC3D4A8E2E49CB4200C62E73 /* Build configuration list for PBXProject "Cryptt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC3D4ABA2E49CB4500C62E73 /* Debug */,
+				CC3D4ABB2E49CB4500C62E73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC3D4ABC2E49CB4500C62E73 /* Build configuration list for PBXNativeTarget "Cryptt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC3D4ABD2E49CB4500C62E73 /* Debug */,
+				CC3D4ABE2E49CB4500C62E73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC3D4ABF2E49CB4500C62E73 /* Build configuration list for PBXNativeTarget "CrypttTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC3D4AC02E49CB4500C62E73 /* Debug */,
+				CC3D4AC12E49CB4500C62E73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC3D4AC22E49CB4500C62E73 /* Build configuration list for PBXNativeTarget "CrypttUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC3D4AC32E49CB4500C62E73 /* Debug */,
+				CC3D4AC42E49CB4500C62E73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CC3D4A8B2E49CB4200C62E73 /* Project object */;
+}
