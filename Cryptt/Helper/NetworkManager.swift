@@ -22,6 +22,7 @@ class NetworkManager: ObservableObject {
     let keys: String = "d2d7706e70cf8db5cd453f3b1989523b6ee2c881d1ba727dd6ae200822288df2"
     
     
+    //MARK: Function
     func getInfo() async throws {
         
     }
