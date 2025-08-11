@@ -9,4 +9,14 @@ import Foundation
 
 class NetworkManager: ObservableObject {
     
+    
+    //MARK: Singelton
+    static let shared = NetworkManager()
+    
+    init() {
+        
+    }
+    
+    let url: String = "https://rest.coincap.io/v3/assets"
+    
 }
