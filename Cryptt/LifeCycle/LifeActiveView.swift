@@ -19,18 +19,19 @@ struct LifeActiveView: View {
     var body: some View {
         ZStack {
             GeometryReader { geometry in
-                
-                HStack {
-                    Text("CryptoGraf")
-                        .font(.title)
-                        .bold()
-                        .fontWidth(.compressed)
-                        .foregroundStyle(colors)
-                    
-                    Image(systemName: "bitcoinsign.bank.building.fill")
-                        .resizable()
-                        .frame(width: geometry.size.width / 10, height: geometry.size.height / 20)
-                        .foregroundStyle(.yellow)
+                VStack {
+                    HStack {
+                        Text("CryptoGraf")
+                            .font(.title)
+                            .bold()
+                            .fontWidth(.compressed)
+                            .foregroundStyle(colors)
+                        
+                        Image(systemName: "bitcoinsign.bank.building.fill")
+                            .resizable()
+                            .frame(width: geometry.size.width / 10, height: geometry.size.height / 20)
+                            .foregroundStyle(.yellow)
+                    }
                 }
             }
         }
