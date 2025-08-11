@@ -11,12 +11,16 @@ import SwiftUI
 struct CrypttApp: App {
     let persistenceController = PersistenceController.shared
     
-    @Environment(\.scenePhase) var scenePhase 
-
+    @Environment(\.scenePhase) var scenePhase
+    
     var body: some Scene {
         WindowGroup {
-            RecordView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ZStack {
+                
+                
+                RecordView()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            }
         }
     }
 }
