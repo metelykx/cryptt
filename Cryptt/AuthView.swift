@@ -67,6 +67,9 @@ struct AuthView: View {
                         HStack {
                             Image(systemName: "lock.fill")
                                 .foregroundStyle(colorsText)
+                            Text("Password").font(.headline)
+                                .fontWeight(.medium)
+                                .foregroundStyle(colorsText)
                             SecureField("Enter password", text: $password)
                                 .focused($focusedField, equals: .password)
                                 .onTapGesture {
