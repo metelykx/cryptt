@@ -20,6 +20,7 @@ struct LifeActiveView: View {
         ZStack {
             GeometryReader { geometry in
                 Circle1View(size: geometry.size)
+                Circle2View(size: geometry.size)
                 VStack {
                     HStack {
                         Text("CryptoGraf")
