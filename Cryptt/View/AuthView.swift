@@ -10,19 +10,20 @@ import CryptoKit
 
 struct AuthView: View {
     
+    //MARK: Variables for control
     @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.colorScheme) private var colorScheme
     
-    // Состояния для ввода данных
+ 
     @State private var name: String = ""
     @State private var password: String = ""
     @State private var repeatPass: String = ""
     
-    // Состояния для обработки ошибок
+    
     @State private var isError: Bool = false
     @State private var errorMessage: String = ""
     
-    // Управление фокусом
+    // Controll Focus
     enum FocusField: Hashable {
         case name, password, repeatPassword
     }

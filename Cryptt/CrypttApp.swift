@@ -28,8 +28,6 @@ struct CrypttApp: App {
                     .animation(.default, value: isActive)
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     
-                
-                
                 LifeActiveView()
                     .opacity(isActive ? 0 : 1)
                     .animation(.default, value: isActive)
