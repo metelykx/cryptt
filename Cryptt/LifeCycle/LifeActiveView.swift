@@ -10,7 +10,9 @@ import SwiftUI
 
 struct LifeActiveView: View {
     var body: some View {
-        Text("LifeActiveView")
+        ZStack {
+            Text("LifeActiveView")
+        }
     }
 }
 
