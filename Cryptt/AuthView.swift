@@ -82,6 +82,9 @@ struct AuthView: View {
                         HStack {
                             Image(systemName: "lock.circle.fill")
                                 .foregroundStyle(colorsText)
+                            Text("Repeat").font(.headline)
+                                .fontWeight(.medium)
+                                .foregroundStyle(colorsText)
                             SecureField("Repeat password", text: $repeatPass)
                                 .focused($focusedField, equals: .repeatPassword)
                                 .onTapGesture {
