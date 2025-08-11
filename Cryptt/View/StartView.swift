@@ -14,7 +14,7 @@ struct StartView: View {
     @Environment(\.colorScheme) private var colorScheme
     
     private var colors: Color {
-        colorScheme == .dark ? .white : .black
+        colorScheme == .dark ? .black : .white
     }
     
     private var colorsText: Color {
