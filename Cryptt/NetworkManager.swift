@@ -18,5 +18,6 @@ class NetworkManager: ObservableObject {
     }
     
     let url: String = "https://rest.coincap.io/v3/assets"
+    let decoder = JSONDecoder()
     
 }
