@@ -29,7 +29,7 @@ struct AuthView: View {
     @FocusState private var focusedField: FocusField?
     
     private var colorsText: Color {
-        colorScheme == .dark ? .white : .black
+        colorScheme == .dark ? .black : .white
     }
     
     var body: some View {
@@ -51,6 +51,9 @@ struct AuthView: View {
                         // Поле имени
                         HStack {
                             Image(systemName: "person.fill")
+                                .foregroundStyle(colorsText)
+                            Text("Name").font(.headline)
+                                .fontWeight(.medium)
                                 .foregroundStyle(colorsText)
                             TextField("Enter your name", text: $name)
                                 .focused($focusedField, equals: .name)
