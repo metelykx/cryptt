@@ -30,9 +30,12 @@ struct CrypttApp: App {
                     .opacity(isActive ? 0 : 1)
                     .animation(.default, value: isActive)
             }
-        }.onChange(of: scenePhase) { oldValue, newValue in
+        }.onChange(of: scenePhase) { newValue in
             switch newValue{
-                
+            case .active:
+                self.isActive = true
+            case .inactive:
+                self.isActive = false
             }
         }
     }
