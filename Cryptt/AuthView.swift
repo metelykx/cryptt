@@ -4,14 +4,13 @@
 //
 //  Created by Denis Ivaschenko on 11.08.2025.
 //
-
 import SwiftUI
 import CoreData
 import CryptoKit
 
 struct AuthView: View {
     
-    @Environment(\.managedObjectContext) var managedObjectContextt
+    @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.colorScheme) private var colorScheme
     
     // Состояния для ввода данных
@@ -23,10 +22,14 @@ struct AuthView: View {
     @State private var isError: Bool = false
     @State private var errorMessage: String = ""
     
-   
+    // Управление фокусом
+    enum FocusField: Hashable {
+        case name, password, repeatPassword
+    }
+    @FocusState private var focusedField: FocusField?
     
     private var colorsText: Color {
-        colorScheme == .dark ? .black : .white
+        colorScheme == .dark ? .white : .black
     }
     
     var body: some View {
@@ -44,69 +47,51 @@ struct AuthView: View {
                     HeaderView(sizes: geometry.size)
                     
                     // MARK: - Input Fields
-                    ZStack {
-                        Rectangle()
-                            .fill(Color.gray.opacity(0.2))
-                            .frame(width: geometry.size.width/1.1, height: geometry.size.height/4)
-                            .cornerRadius(20)
+                    VStack(spacing: 20) {
+                        // Поле имени
+                        HStack {
+                            Image(systemName: "person.fill")
+                                .foregroundStyle(colorsText)
+                            TextField("Enter your name", text: $name)
+                                .focused($focusedField, equals: .name)
+                                .onTapGesture {
+                                    focusedField = .name
+                                }
+                        }
+                        .authInputStyle()
                         
-                        VStack(spacing: 15) {
-                            HStack {
-                                Image(systemName: "person.fill")
-                                    .foregroundStyle(colorsText)
-                                Text("Name")
-                                    .foregroundStyle(colorsText)
-                                    .font(.headline)
-                                TextField("", text: $name)
-                                    .onChange(of: name) { _ in
-                                        resetError()
-                                    }
-                                    
-                            }
-                            .padding(.top, geometry.size.height / 30)
-                            .padding(.bottom)
-                            .padding(.horizontal)
-                            
-                            HStack {
-                                Image(systemName: "lock.fill")
-                                    .foregroundStyle(colorsText)
-                                Text("Password")
-                                    .foregroundStyle(colorsText)
-                                    .font(.headline)
-                                SecureField("", text: $password)
-                                    .onChange(of: password) { _ in
-                                        resetError()
-                                    }
-                            }
-                            .padding(.bottom)
-                            .padding(.horizontal)
-                            
-                            HStack {
-                                Image(systemName: "lock.circle.fill")
-                                    .foregroundStyle(colorsText)
-                                Text("Repeat")
-                                    .foregroundStyle(colorsText)
-                                    .font(.headline)
-                                SecureField("", text: $repeatPass)
-                                    .onChange(of: repeatPass) { _ in
-                                        resetError()
-                                    }
-                            }
-                            .padding(.bottom)
-                            .padding(.horizontal)
-                            
-                        } .padding(.bottom)
-                            .padding(.horizontal)
-                            .padding(.leading)
-                            .padding(.trailing)
+                        // Поле пароля
+                        HStack {
+                            Image(systemName: "lock.fill")
+                                .foregroundStyle(colorsText)
+                            SecureField("Enter password", text: $password)
+                                .focused($focusedField, equals: .password)
+                                .onTapGesture {
+                                    focusedField = .password
+                                }
+                        }
+                        .authInputStyle()
+                        
+                        // Повтор пароля
+                        HStack {
+                            Image(systemName: "lock.circle.fill")
+                                .foregroundStyle(colorsText)
+                            SecureField("Repeat password", text: $repeatPass)
+                                .focused($focusedField, equals: .repeatPassword)
+                                .onTapGesture {
+                                    focusedField = .repeatPassword
+                                }
+                        }
+                        .authInputStyle()
                     }
-                    
+                    .padding(.horizontal, 24)
+                    .padding(.top, 30)
                     
                     // MARK: - Error Display
                     if isError {
                         Text(errorMessage)
                             .font(.callout)
-                            .padding(.top)
+                            .padding(.top, 10)
                             .foregroundColor(.red)
                             .transition(.opacity)
                             .onAppear {
@@ -132,11 +117,15 @@ struct AuthView: View {
                     Spacer()
                 }
                 .padding(.bottom, geometry.size.height * 0.15)
+                .frame(maxWidth: .infinity)
             }
         }
-        .background(.primary)
+        .background(Color.primary)
         .onTapGesture {
-            hideKeyboard()
+            // Скрываем клавиатуру только если какое-то поле в фокусе
+            if focusedField != nil {
+                focusedField = nil
+            }
         }
     }
     
@@ -187,18 +176,18 @@ struct AuthView: View {
         fetchRequest.predicate = NSPredicate(format: "name == %@", name)
         
         do {
-            let existingUsers = try managedObjectContextt.fetch(fetchRequest)
+            let existingUsers = try managedObjectContext.fetch(fetchRequest)
             if !existingUsers.isEmpty {
                 showError("User with this name already exists")
                 return
             }
             
             // Создание нового пользователя
-            let newItem = Item(context: managedObjectContextt)
+            let newItem = Item(context: managedObjectContext)
             newItem.name = name
             newItem.password = hashPassword(password)  // Храним хэш!
             
-            try managedObjectContextt.save()
+            try managedObjectContext.save()
             
             // Успешная регистрация
             print("User registered successfully!")
@@ -213,19 +202,26 @@ struct AuthView: View {
         let hash = SHA256.hash(data: data)
         return hash.compactMap { String(format: "%02x", $0) }.joined()
     }
-    
-    private func hideKeyboard() {
-        UIApplication.shared.sendAction(
-            #selector(UIResponder.resignFirstResponder),
-            to: nil,
-            from: nil,
-            for: nil
-        )
+}
+
+// MARK: - View Modifier для стилизации полей ввода
+extension View {
+    func authInputStyle() -> some View {
+        self
+            .padding(15)
+            .background(Color.gray.opacity(0.2))
+            .cornerRadius(15)
+            .overlay(
+                RoundedRectangle(cornerRadius: 15)
+                    .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+            )
     }
 }
 
 // MARK: - Preview
-#Preview {
-    AuthView()
-        .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+struct AuthView_Previews: PreviewProvider {
+    static var previews: some View {
+        AuthView()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    }
 }
