@@ -13,7 +13,9 @@ struct LifeActiveView: View {
         ZStack {
             GeometryReader { geometry in
                 
-                Text("LifeActiveView")
+                HStack {
+                    
+                }
             }
         }
     }
