@@ -21,6 +21,7 @@ struct CrypttApp: App {
                 
                 RecordView()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .opacity(isActive ? 1 : 0)
             }
         }
     }
