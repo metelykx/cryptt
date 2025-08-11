@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct HeaderView: View {
+    
     let sizes: CGSize
     @Environment(\.colorScheme) private var colorScheme
     
-   
+   //MARK: View
     var body: some View {
         HStack {
             Text("Welcome to CryptoGraf")
