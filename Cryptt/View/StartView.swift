@@ -44,7 +44,7 @@ struct StartView: View {
                         Spacer()
                         
                         HStack(alignment: .center) {
-                            Text("Crypto")
+                            Text("CryptoGraf")
                                 .font(.title)
                                 .bold()
                                 .fontWidth(.compressed)
