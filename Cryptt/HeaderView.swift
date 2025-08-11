@@ -7,3 +7,12 @@
 
 import SwiftUI
 
+struct HeaderView: View {
+    var body: some View {
+        Text("deded")
+    }
+}
+
+#Preview {
+    HeaderView() 
+}
