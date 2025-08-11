@@ -13,7 +13,7 @@ struct CrypttApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RecordView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

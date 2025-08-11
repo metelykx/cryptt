@@ -1,0 +1,68 @@
+//
+//  RecordView.swift
+//  Cryptt
+//
+//  Created by Denis Ivaschenko on 11.08.2025.
+//
+
+import SwiftUI
+
+struct RecordView: View {
+    @Environment(\.managedObjectContext) var contexView
+    
+    
+    //who is it??
+    @FetchRequest(
+        entity: Item.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.date, ascending: false)]
+    ) var records: FetchedResults<Item>
+    
+    
+    @State var isTrue = false
+    
+    var body: some View {
+        NavigationView {
+            GeometryReader { geometry in
+                ZStack {
+                    List {
+                        ForEach(records) { record in
+                            VStack(alignment: .leading) {
+                                Text(record.title ?? "Untitled")
+                                    .font(.headline)
+                                Text(record.text ?? "No text")
+                                    .lineLimit(2)
+                                Text(record.date ?? "")
+                                    .font(.subheadline)
+                            }
+                        }
+                    }.listStyle(PlainListStyle())
+                    
+                    
+                    VStack {
+                        Spacer()
+                        Button(action: {
+                            isTrue = true
+                        }) {
+                            Text("Create a new record")
+                                .frame(width: geometry.size.width / 2, height:geometry.size.height / 10)
+                                .background(Color.accentColor)
+                                .cornerRadius(20)
+                                .foregroundStyle(.white)
+                                .font(.headline)
+                        }
+                        .padding(.bottom)
+                    }
+                }
+                .navigationTitle("Your Records")
+                .sheet(isPresented: $isTrue) {
+                    CreateRecordView()
+                        .environment(\.managedObjectContext, contexView)
+                }
+            }
+        }
+    }
+}
+
+#Preview {
+    RecordView()
+}
