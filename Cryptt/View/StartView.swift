@@ -10,6 +10,7 @@ import CoreData
 
 struct StartView: View {
     
+    //MARK: Variable for Data
     @Environment(\.managedObjectContext) var managedObjectContextt
     @Environment(\.colorScheme) private var colorScheme
     
@@ -26,12 +27,14 @@ struct StartView: View {
     @State private var isError: String? = nil
     @State private var isAuth: Bool = false
     
-    // Управление фокусом
+    // Control Focus
     enum FocusField: Hashable {
         case name, password
     }
     @FocusState private var focusedField: FocusField?
     
+    
+    //MARK: View
     var body: some View {
         NavigationStack {
             ZStack {
@@ -58,7 +61,7 @@ struct StartView: View {
                         
                         // MARK: - Updated Input Fields
                         VStack(spacing: 20) {
-                            // Поле имени
+                           
                             HStack {
                                 Image(systemName: "person.fill")
                                     .foregroundStyle(colorsText)
@@ -74,7 +77,7 @@ struct StartView: View {
                             }
                             .authInputStyle()
                             
-                            // Поле пароля
+                            
                             HStack {
                                 Image(systemName: "lock.fill")
                                     .foregroundStyle(colorsText)

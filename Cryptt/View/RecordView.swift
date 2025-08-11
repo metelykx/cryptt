@@ -20,7 +20,7 @@ struct RecordView: View {
     
     @State var isTrue = false
     
-    //MARK: View
+    //MARK: View    
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
