@@ -9,13 +9,22 @@ import SwiftUI
 
 
 struct LifeActiveView: View {
+    
+    
+    
+    private var colors: {
+        
+    }
     var body: some View {
         ZStack {
             GeometryReader { geometry in
                 
                 HStack {
                     Text("CryptoGraf")
-                    
+                        .font(.title)
+                        .bold()
+                        .fontWidth(.compressed)
+                        .foregroundStyle(colors)
                 }
             }
         }
