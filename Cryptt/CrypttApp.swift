@@ -9,8 +9,11 @@ import SwiftUI
 
 @main
 struct CrypttApp: App {
+    
+    
     let persistenceController = PersistenceController.shared
     
+    //MARK: control cycle
     @Environment(\.scenePhase) var scenePhase
     @State private var isActive: Bool = false
     
