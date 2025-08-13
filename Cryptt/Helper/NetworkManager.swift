@@ -34,6 +34,12 @@ class NetworkManager: ObservableObject {
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
             throw NetworkErrors.invalidResponse
         }
+        do {
+            try decoder.decode(Welcome.self, from: data)
+        }
+        catch {
+            throw NetworkErrors.invalidData
+        }
     }
     
 }
@@ -41,4 +47,5 @@ class NetworkManager: ObservableObject {
 enum NetworkErrors: String, Error {
     case invalidURL = "Invalid URL"
     case invalidResponse = "Invalid HTTP response"
+    case invalidData = "Invalid data"
 }
