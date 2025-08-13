@@ -68,6 +68,7 @@ struct ShowInfoView: View {
                                 
                                 Text("Changes: \(infos.changePercent24Hr)")
                                     .font(.title2)
+                                    .padding(.leading)
                                     
                             }
                         }
