@@ -41,7 +41,7 @@ struct ShowInfoView: View {
                                     .padding(.top,geometry.size.height/20)
                             }
                             VStack(alignment: .leading) {
-                                
+                                Text("Name: \(infos.name)")
                             }
                         }
                     }
