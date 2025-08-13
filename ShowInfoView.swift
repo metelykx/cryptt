@@ -33,7 +33,7 @@ struct ShowInfoView: View {
                             Text(infos.rank)
                                 .bold()
                                 .font(.title)
-                                .padding(.top)
+                                .padding(.top,geometry.size.height/20)
                             
                             Text(infos.symbol)
                                 .font(.title)
