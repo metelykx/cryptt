@@ -47,6 +47,16 @@ struct ShowInfoView: View {
                                 
                                 Text("Supply: \(infos.supply)")
                                     .font(.title2)
+                                
+                                Text(infos.maxSupply!)
+                                
+                                Text(infos.marketCapUsd)
+                                
+                                Text(infos.volumeUsd24Hr)
+                                
+                                Text(infos.priceUsd)
+                                
+                                Text(infos.changePercent24Hr)
                                     
                             }
                         }
