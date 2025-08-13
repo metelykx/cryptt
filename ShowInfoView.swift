@@ -55,6 +55,7 @@ struct ShowInfoView: View {
                                     .font(.title2)
                                 
                                 Text("Volume: \(infos.volumeUsd24Hr)")
+                                    .font(.title2)
                                 
                                 Text("Price: \(infos.priceUsd)")
                                 
