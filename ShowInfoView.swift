@@ -18,7 +18,6 @@ struct ShowInfoView: View {
             GeometryReader { geometry in
                 
                 
-                
                 VStack {
                     ZStack(alignment: .top) {
   
@@ -40,6 +39,8 @@ struct ShowInfoView: View {
                                     .font(.title)
                                     .bold()
                                     .padding(.top,geometry.size.height/20)
+                            }
+                            VStack(alignment: .leading) {
                                 
                             }
                         }
