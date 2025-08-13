@@ -7,4 +7,9 @@
 
 import Foundation
 
+enum NetworkErrors: String, Error {
+    case invalidURL = "Invalid URL"
+    case invalidResponse = "Invalid HTTP response"
+    case invalidData = "Invalid data"
+}
 
