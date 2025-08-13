@@ -12,6 +12,7 @@ struct ShowInfoView: View {
     //we need to add infos becaus we wanna to create base info. Thanks this is infos we can crate a cool View
     let infos: Datum
     
+    //MARK: View
     var body: some View {
         ZStack {
             GeometryReader { geometry in
