@@ -17,12 +17,16 @@ struct ShowInfoView: View {
         ZStack {
             GeometryReader { geometry in
                 VStack {
-                    Rectangle()
-                        .frame(width: .infinity, height: geometry.size.height/2)
-                        .cornerRadius(20)
-                        .padding(.vertical)
-                        .padding(.horizontal)
-                        .foregroundStyle(Color.gray.opacity(0.4))
+                    VStack {
+                        Rectangle()
+                            .frame(width: .infinity, height: geometry.size.height/2)
+                            .cornerRadius(20)
+                            .padding(.vertical)
+                            .padding(.horizontal)
+                            .foregroundStyle(Color.gray.opacity(0.4))
+                        
+                        
+                    }
                 }
             }
         }
