@@ -49,14 +49,15 @@ struct ShowInfoView: View {
                                     .font(.title2)
                                 
                                 Text("Max supply: \(infos.maxSupply!)")
+                                    .font(.title2)
                                 
                                 Text("MarketCapUSD : \(infos.marketCapUsd)")
                                 
-                                Text(infos.volumeUsd24Hr)
+                                Text("Volume: \(infos.volumeUsd24Hr)")
                                 
-                                Text(infos.priceUsd)
+                                Text("Price: \(infos.priceUsd)")
                                 
-                                Text(infos.changePercent24Hr)
+                                Text("Changes: \(infos.changePercent24Hr)")
                                     
                             }
                         }
