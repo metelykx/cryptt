@@ -13,7 +13,9 @@ struct ShowInfoView: View {
     let infos: Datum
     
     var body: some View {
-        Text("fefe")
+        ZStack {
+            
+        }
     }
 }
 
