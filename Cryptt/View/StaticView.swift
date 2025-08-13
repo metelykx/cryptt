@@ -22,7 +22,13 @@ struct StaticView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading)
                     .padding(.top)
+                
+                ForEach(art.welcomes, id: \.id) { article in
+                    ShowInfoView(infos: article)
+                }
             }
+        }.onAppear {
+            art.fetchInfo()
         }
     }
 }

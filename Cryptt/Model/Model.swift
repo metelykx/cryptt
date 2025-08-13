@@ -8,16 +8,19 @@
 import Foundation
 
 // MARK: - Welcome
-struct Welcome: Decodable {
+struct Welcome: Codable {
     let data: [Datum]
     let timestamp: Int
 }
 
 // MARK: - Datum
 struct Datum: Codable {
-    let rank, symbol, name: String
+    let id, rank, symbol, name: String
     let supply: String
     let maxSupply: String?
     let marketCapUsd, volumeUsd24Hr, priceUsd, changePercent24Hr: String
+    let vwap24Hr: String?
+    let explorer: String?
+    let tokens: [String: [String]]
 }
 

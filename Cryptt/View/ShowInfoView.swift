@@ -1,87 +1,164 @@
-//
-//  ShowInfoView.swift
-//  Cryptt
-//
-//  Created by Denis Ivaschenko on 13.08.2025.
-//
-
 import SwiftUI
 
 struct ShowInfoView: View {
-    
-    //we need to add infos becaus we wanna to create base info. Thanks this is infos we can crate a cool View
     let infos: Datum
     
-    //MARK: View
     var body: some View {
-        ZStack {
-            GeometryReader { geometry in
+        VStack(alignment: .leading, spacing: 12) {
+            // Заголовок карточки
+            HStack {
+                Text("#\(infos.rank)")
+                    .font(.title2)
+                    .bold()
+                    .foregroundColor(.blue)
                 
+                Text(infos.symbol)
+                    .font(.title2)
+                    .bold()
+                    .foregroundColor(.primary)
                 
-                VStack {
-                    ZStack(alignment: .top) {
-  
-                        Rectangle()
-                            .frame(width: .infinity, height: geometry.size.height/2)
-                            .cornerRadius(20)
-                            .padding(.vertical)
-                            .padding(.horizontal)
-                            .foregroundStyle(Color.gray.opacity(0.4))
-                        
-                        VStack {
-                            HStack {
-                                Text(infos.rank)
-                                    .bold()
-                                    .font(.title)
-                                    .padding(.top,geometry.size.height/20)
-                                
-                                Text(infos.symbol)
-                                    .font(.title)
-                                    .bold()
-                                    .padding(.top,geometry.size.height/20)
-                            }
-                            VStack(alignment: .leading, spacing: 10) {
-                                Text("Name: \(infos.name)")
-                                    .padding(.trailing, geometry.size.height/4)
-                                    .font(.title2)
-                                    .padding(.leading)
-                                
-                                Text("Supply: \(infos.supply)")
-                                    .font(.title2)
-                                    .padding(.leading).lineLimit(nil) // Разрешаем неограниченное количество строк
-                                    .fixedSize(horizontal: false, vertical: true) // Разрешаем вертикальное расширение
-                                    .multilineTextAlignment(.leading)
-                                
-                                Text("Max supply: \(infos.maxSupply!)")
-                                    .font(.title2)
-                                    .padding(.leading)
-                                
-                                Text("MarketCapUSD : \(infos.marketCapUsd)")
-                                    .font(.title2)
-                                    .padding(.leading)
-                                
-                                Text("Volume: \(infos.volumeUsd24Hr)")
-                                    .font(.title2)
-                                    .padding(.leading)
-                                
-                                Text("Price: \(infos.priceUsd)")
-                                    .font(.title2)
-                                    .padding(.leading)
-                                
-                                Text("Changes: \(infos.changePercent24Hr)")
-                                    .font(.title2)
-                                    .padding(.leading)
-                                    
-                            }
-                        }
-                    }
-                }
+                Spacer()
+                
+                Text(infos.name)
+                    .font(.headline)
+                    .foregroundColor(.secondary)
             }
+            .padding(.bottom, 8)
+            
+            // Основные метрики
+            VStack(alignment: .leading, spacing: 8) {
+                MetricRow(title: "Price",
+                          value: formattedCurrency(infos.priceUsd),
+                          icon: "dollarsign.circle")
+                
+                MetricRow(title: "Market Cap",
+                          value: formattedCurrency(infos.marketCapUsd),
+                          icon: "chart.bar")
+                
+                MetricRow(title: "Volume (24h)",
+                          value: formattedCurrency(infos.volumeUsd24Hr),
+                          icon: "arrow.left.arrow.right")
+                
+                HStack {
+                    MetricRow(title: "Supply",
+                              value: formattedNumber(infos.supply),
+                              icon: "number")
+                    
+                    MetricRow(title: "Max Supply",
+                              value: formattedNumber(infos.maxSupply),
+                              icon: "infinity")
+                }
+                
+                // Изменение цены с цветовой индикацией
+                HStack {
+                    Image(systemName: infos.changePercent24Hr.hasPrefix("-") ?
+                          "arrow.down.right" : "arrow.up.right")
+                    
+                    Text("24h Change")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                    
+                    Spacer()
+                    
+                    Text(formattedPercent(infos.changePercent24Hr))
+                        .bold()
+                        .foregroundColor(infos.changePercent24Hr.hasPrefix("-") ?
+                                       .red : .green)
+                }
+                .padding(.top, 4)
+            }
+        }
+        .padding()
+        .background(Color(.systemBackground))
+        .cornerRadius(16)
+        .shadow(color: Color.black.opacity(0.1), radius: 6, x: 0, y: 3)
+        .padding(.horizontal)
+        .padding(.vertical, 8)
+    }
+    
+    // MARK: - Форматирующие функции
+    
+    private func formattedCurrency(_ value: String?) -> String {
+        guard let value = value, let number = Double(value) else { return "N/A" }
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencySymbol = "$"
+        formatter.maximumFractionDigits = 2
+        
+        if number > 1_000_000_000 {
+            formatter.positiveSuffix = "B"
+            return formatter.string(from: NSNumber(value: number / 1_000_000_000)) ?? "N/A"
+        } else if number > 1_000_000 {
+            formatter.positiveSuffix = "M"
+            return formatter.string(from: NSNumber(value: number / 1_000_000)) ?? "N/A"
+        }
+        
+        return formatter.string(from: NSNumber(value: number)) ?? "N/A"
+    }
+    
+    private func formattedNumber(_ value: String?) -> String {
+        guard let value = value, let number = Double(value) else { return "N/A" }
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 0
+        
+        if number > 1_000_000_000 {
+            formatter.positiveSuffix = "B"
+            return formatter.string(from: NSNumber(value: number / 1_000_000_000)) ?? "N/A"
+        } else if number > 1_000_000 {
+            formatter.positiveSuffix = "M"
+            return formatter.string(from: NSNumber(value: number / 1_000_000)) ?? "N/A"
+        }
+        
+        return formatter.string(from: NSNumber(value: number)) ?? "N/A"
+    }
+    
+    private func formattedPercent(_ value: String?) -> String {
+        guard let value = value, let number = Double(value) else { return "N/A" }
+        return String(format: "%.2f%%", number)
+    }
+}
+
+// Вспомогательный вид для строки метрики
+struct MetricRow: View {
+    let title: String
+    let value: String
+    let icon: String
+    
+    var body: some View {
+        HStack {
+            Image(systemName: icon)
+                .foregroundColor(.secondary)
+                .frame(width: 24)
+            
+            Text(title)
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+            
+            Spacer()
+            
+            Text(value)
+                .bold()
         }
     }
 }
 
-
 #Preview {
-    ShowInfoView(infos: Datum(rank: "1", symbol: "BTC", name: "BitCoin", supply: "19905281.0000", maxSupply: "21000000.00", marketCapUsd: "2378217132259.4600698742800082", volumeUsd24Hr: "19062411264.4263499071064425", priceUsd: "119476.6922536516851922", changePercent24Hr: "0.4384217220864664"))
+    ShowInfoView(infos: Datum(
+        id: "bitcoin",
+        rank: "1",
+        symbol: "BTC",
+        name: "Bitcoin",
+        supply: "19423843.0000000000000000",
+        maxSupply: "21000000.0000000000000000",
+        marketCapUsd: "1194766922536",
+        volumeUsd24Hr: "19062411264",
+        priceUsd: "61476.69",
+        changePercent24Hr: "0.43",
+        vwap24Hr: "",
+        explorer: "https://blockchain.info/",
+        tokens: [:]
+    ))
 }

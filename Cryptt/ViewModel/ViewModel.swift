@@ -11,6 +11,7 @@ class ViewModel: ObservableObject {
     
     //this is array for save info from API
     @Published var welcomes: [Datum] = []
+
     
     //func for show User info
     func fetchInfo() {
