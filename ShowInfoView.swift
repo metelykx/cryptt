@@ -15,6 +15,9 @@ struct ShowInfoView: View {
     var body: some View {
         ZStack {
             GeometryReader { geometry in
+                VStack {
+                    
+                }
             }
         }
     }
