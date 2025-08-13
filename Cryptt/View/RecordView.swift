@@ -43,12 +43,20 @@ struct RecordView: View {
                     
                         .navigationTitle("Your Records")
                         .toolbar {
-                            
-                        }
-                        .sheet(isPresented: $isTrue) {
-                            CreateRecordView()
-                                .environment(\.managedObjectContext, contexView)
-                        }
+                                        ToolbarItem(placement: .navigationBarTrailing) {
+                                            Button(action: {
+                                                isTrue = true
+                                            }) {
+                                                Image(systemName: "plus")
+                                                    .font(.headline)
+                                                    .accessibilityLabel("Add new record")
+                                            }
+                                        }
+                                    }
+                                    .sheet(isPresented: $isTrue) {
+                                        CreateRecordView()
+                                            .environment(\.managedObjectContext, contexView)
+                                    }
                 }
             }
         }
