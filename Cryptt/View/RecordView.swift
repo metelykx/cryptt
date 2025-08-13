@@ -42,6 +42,9 @@ struct RecordView: View {
                     
                     
                         .navigationTitle("Your Records")
+                        .toolbar {
+                            
+                        }
                         .sheet(isPresented: $isTrue) {
                             CreateRecordView()
                                 .environment(\.managedObjectContext, contexView)
