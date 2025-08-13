@@ -14,6 +14,8 @@ class ViewModel: ObservableObject {
     
     //func for show User info
     func fetchInfo() {
+        
+        //Task for async 
         Task {
             do {
                 let welcome = try await NetworkManager().getInfo()
