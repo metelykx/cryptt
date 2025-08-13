@@ -7,6 +7,7 @@
 
 import Foundation
 
+//This is Enum for errors
 enum NetworkErrors: String, Error {
     case invalidURL = "Invalid URL"
     case invalidResponse = "Invalid HTTP response"
