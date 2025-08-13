@@ -60,6 +60,7 @@ struct ShowInfoView: View {
                                 
                                 Text("Volume: \(infos.volumeUsd24Hr)")
                                     .font(.title2)
+                                    .padding(.leading)
                                 
                                 Text("Price: \(infos.priceUsd)")
                                     .font(.title2)
