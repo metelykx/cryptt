@@ -17,7 +17,9 @@ class ViewModel: ObservableObject {
                 let welcome = try await NetworkManager().getInfo()
                 welcomes = welcome.data
             } catch {
-                if let 
+                if let error = error as? NetworkErrors {
+                    print(error)
+                }
             }
         }
     }
