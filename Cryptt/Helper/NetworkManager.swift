@@ -35,7 +35,7 @@ class NetworkManager: ObservableObject {
             throw NetworkErrors.invalidResponse
         }
         do {
-            try decoder.decode(Welcome.self, from: data)
+            return try decoder.decode(Welcome.self, from: data)
         }
         catch {
             throw NetworkErrors.invalidData
