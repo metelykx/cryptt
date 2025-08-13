@@ -52,6 +52,7 @@ struct ShowInfoView: View {
                                     .font(.title2)
                                 
                                 Text("MarketCapUSD : \(infos.marketCapUsd)")
+                                    .font(.title2)
                                 
                                 Text("Volume: \(infos.volumeUsd24Hr)")
                                 
