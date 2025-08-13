@@ -29,19 +29,20 @@ struct ShowInfoView: View {
                             .padding(.horizontal)
                             .foregroundStyle(Color.gray.opacity(0.4))
                         
-                        HStack {
-                            Text(infos.rank)
-                                .bold()
-                                .font(.title)
-                                .padding(.top,geometry.size.height/20)
-                            
-                            Text(infos.symbol)
-                                .font(.title)
-                                .bold()
-                                .padding(.top,geometry.size.height/20)
-                            
+                        VStack {
+                            HStack {
+                                Text(infos.rank)
+                                    .bold()
+                                    .font(.title)
+                                    .padding(.top,geometry.size.height/20)
+                                
+                                Text(infos.symbol)
+                                    .font(.title)
+                                    .bold()
+                                    .padding(.top,geometry.size.height/20)
+                                
+                            }
                         }
-                        
                     }
                 }
             }
