@@ -11,7 +11,7 @@ class ViewModel: ObservableObject {
     
     @Published var Welcome: [Datum] = []
     
-    func getInfo() {
+    func fetchInfo() {
         
     }
 }
