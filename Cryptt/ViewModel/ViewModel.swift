@@ -9,9 +9,16 @@ import Foundation
 
 class ViewModel: ObservableObject {
     
-    @Published var Welcome: [Datum] = []
+    @Published var welcomes: [Datum] = []
     
     func fetchInfo() {
-        
+        Task {
+            do {
+                let welcome = try await NetworkManager().getInfo()
+                welcomes = welcome.data
+            } catch {
+                if let 
+            }
+        }
     }
 }
