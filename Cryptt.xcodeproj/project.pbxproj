@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CCD8F1842E4C8373000EA78A /* ShowInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8F1832E4C8368000EA78A /* ShowInfoView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		CC3D4AA92E49CB4500C62E73 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		CC3D4A932E49CB4200C62E73 /* Cryptt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cryptt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC3D4AA82E49CB4500C62E73 /* CrypttTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrypttTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC3D4AB22E49CB4500C62E73 /* CrypttUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrypttUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCD8F1832E4C8368000EA78A /* ShowInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -79,6 +84,7 @@
 				CC3D4AAB2E49CB4500C62E73 /* CrypttTests */,
 				CC3D4AB52E49CB4500C62E73 /* CrypttUITests */,
 				CC3D4A942E49CB4200C62E73 /* Products */,
+				CCD8F1832E4C8368000EA78A /* ShowInfoView.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -236,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCD8F1842E4C8373000EA78A /* ShowInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
