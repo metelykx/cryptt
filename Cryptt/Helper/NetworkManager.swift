@@ -30,10 +30,15 @@ class NetworkManager: ObservableObject {
         }
         
         let (data,response) = try await URLSession.shared.data(from: url)
+        
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+            throw NetworkErrors.invalidResponse
+        }
     }
     
 }
 
 enum NetworkErrors: String, Error {
     case invalidURL = "Invalid URL"
+    case invalidResponse = "Invalid HTTP response"
 }
