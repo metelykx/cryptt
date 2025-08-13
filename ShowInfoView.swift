@@ -21,7 +21,9 @@ struct ShowInfoView: View {
                 
                 VStack {
                     ZStack {
-                        Text(infos.rank)
+                        VStack {
+                            Text(infos.rank)
+                        }
                         Rectangle()
                             .frame(width: .infinity, height: geometry.size.height/2)
                             .cornerRadius(20)
