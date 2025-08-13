@@ -21,6 +21,7 @@ struct ShowInfoView: View {
                         .cornerRadius(20)
                         .padding(.vertical)
                         .padding(.horizontal)
+                        .foregroundStyle(Color.gray.opacity(0.4))
                 }
             }
         }
