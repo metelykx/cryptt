@@ -20,7 +20,7 @@ struct RecordView: View {
     
     @State var isTrue = false
     
-    //MARK: View    
+    //MARK: View
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
@@ -39,25 +39,13 @@ struct RecordView: View {
                     }.listStyle(PlainListStyle())
                     
                     
-                    VStack {
-                        Spacer()
-                        Button(action: {
-                            isTrue = true
-                        }) {
-                            Text("Create a new record")
-                                .frame(width: geometry.size.width / 2, height:geometry.size.height / 10)
-                                .background(Color.accentColor)
-                                .cornerRadius(20)
-                                .foregroundStyle(.white)
-                                .font(.headline)
+                    
+                    
+                        .navigationTitle("Your Records")
+                        .sheet(isPresented: $isTrue) {
+                            CreateRecordView()
+                                .environment(\.managedObjectContext, contexView)
                         }
-                        .padding(.bottom)
-                    }
-                }
-                .navigationTitle("Your Records")
-                .sheet(isPresented: $isTrue) {
-                    CreateRecordView()
-                        .environment(\.managedObjectContext, contexView)
                 }
             }
         }
