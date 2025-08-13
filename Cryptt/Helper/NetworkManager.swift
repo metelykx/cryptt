@@ -26,6 +26,7 @@ class NetworkManager: ObservableObject {
     //MARK: Function
     func getInfo() async throws -> Welcome{
         
+        //in the here we check is URL or no
         guard let url = URL(string: url) else {
             throw NetworkErrors.invalidURL
         }
