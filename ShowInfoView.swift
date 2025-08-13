@@ -58,6 +58,7 @@ struct ShowInfoView: View {
                                     .font(.title2)
                                 
                                 Text("Price: \(infos.priceUsd)")
+                                    .font(.title2)
                                 
                                 Text("Changes: \(infos.changePercent24Hr)")
                                     
