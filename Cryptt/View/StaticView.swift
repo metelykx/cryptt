@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct StaticView: View {
+    
+    
+    @StateObject var art = ViewModel()
+    
+    
     var body: some View {
         Text("dede")
     }
