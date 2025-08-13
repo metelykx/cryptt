@@ -7,4 +7,13 @@
 
 import SwiftUI
 
+struct ShowInfoView: View {
+    var body: some View {
+        Text("fefe")
+    }
+}
 
+
+#Preview {
+    ShowInfoView()
+}
