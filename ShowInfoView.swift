@@ -16,7 +16,8 @@ struct ShowInfoView: View {
         ZStack {
             GeometryReader { geometry in
                 VStack {
-                    
+                    Rectangle()
+                        
                 }
             }
         }
