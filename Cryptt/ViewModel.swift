@@ -5,4 +5,8 @@
 //  Created by Denis Ivaschenko on 13.08.2025.
 //
 
-import Foundation 
+import Foundation
+
+class ViewModel: ObservableObject {
+    
+}
