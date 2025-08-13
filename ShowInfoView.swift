@@ -34,7 +34,13 @@ struct ShowInfoView: View {
                                 .bold()
                                 .font(.title)
                                 .padding(.top)
+                            
+                            Text(infos.symbol)
+                                .font(.title)
+                                .bold()
+                                .padding(.top)
                         }
+                        
                     }
                 }
             }
