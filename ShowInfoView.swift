@@ -16,8 +16,12 @@ struct ShowInfoView: View {
     var body: some View {
         ZStack {
             GeometryReader { geometry in
+                
+                
+                
                 VStack {
-                    VStack {
+                    ZStack {
+                        Text(infos.rank)
                         Rectangle()
                             .frame(width: .infinity, height: geometry.size.height/2)
                             .cornerRadius(20)
