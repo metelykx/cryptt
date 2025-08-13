@@ -14,7 +14,9 @@ struct StaticView: View {
     
     
     var body: some View {
-        Text("dede")
+        ScrollView(showsIndicators: false) {
+            
+        }
     }
 }
 
