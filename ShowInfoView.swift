@@ -44,7 +44,10 @@ struct ShowInfoView: View {
                                 Text("Name: \(infos.name)")
                                     .padding(.trailing, geometry.size.height/4)
                                     .font(.title2)
+                                
                                 Text("Supply: \(infos.supply)")
+                                    .font(.title2)
+                                    
                             }
                         }
                     }
