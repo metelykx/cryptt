@@ -17,7 +17,7 @@ struct ShowInfoView: View {
             GeometryReader { geometry in
                 VStack {
                     Rectangle()
-                        
+                        .frame(width: .infinity, height: geometry.size.height/2)
                 }
             }
         }
