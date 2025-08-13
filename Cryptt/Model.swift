@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Welcome
-struct Welcome: Codable {
+struct Welcome: Decodable {
     let data: [Datum]
     let timestamp: Int
 }

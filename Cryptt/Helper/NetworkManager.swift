@@ -23,8 +23,15 @@ class NetworkManager: ObservableObject {
     
     
     //MARK: Function
-    func getInfo() async throws {
+    func getInfo() async throws -> Welcome{
         
+        guard let url = URL(string: url) else {
+            throw NetworkErrors.invalidURL
+        }
     }
     
+}
+
+enum NetworkErrors: String, Error {
+    case invalidURL = "Invalid URL"
 }
