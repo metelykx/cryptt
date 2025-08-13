@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ShowInfoView: View {
+    
+    let infos: Datum
+    
     var body: some View {
         Text("fefe")
     }
@@ -15,5 +18,5 @@ struct ShowInfoView: View {
 
 
 #Preview {
-    ShowInfoView()
+    ShowInfoView(infos: Datum(rank: "1", symbol: "BTC", name: "BitCoin", supply: "19905281.0000", maxSupply: "21000000.00", marketCapUsd: "2378217132259.4600698742800082", volumeUsd24Hr: "19062411264.4263499071064425", priceUsd: "119476.6922536516851922", changePercent24Hr: "0.4384217220864664"))
 }

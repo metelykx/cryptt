@@ -15,12 +15,9 @@ struct Welcome: Decodable {
 
 // MARK: - Datum
 struct Datum: Codable {
-    let id, rank, symbol, name: String
+    let rank, symbol, name: String
     let supply: String
     let maxSupply: String?
     let marketCapUsd, volumeUsd24Hr, priceUsd, changePercent24Hr: String
-    let vwap24Hr: String?
-    let explorer: String?
-    let tokens: [String: [String]]
 }
 
