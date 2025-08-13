@@ -31,6 +31,7 @@ class NetworkManager: ObservableObject {
             throw NetworkErrors.invalidURL
         }
         
+        //we get data and response from API
         let (data,response) = try await URLSession.shared.data(from: url)
         
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
