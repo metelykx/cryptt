@@ -29,12 +29,12 @@ struct ShowInfoView: View {
                             .padding(.horizontal)
                             .foregroundStyle(Color.gray.opacity(0.4))
                         
-                        
-                        Text(infos.rank)
-                            .bold()
-                            .font(.title)
-                            .padding(.top)
-                        
+                        HStack{
+                            Text(infos.rank)
+                                .bold()
+                                .font(.title)
+                                .padding(.top)
+                        }
                     }
                 }
             }
