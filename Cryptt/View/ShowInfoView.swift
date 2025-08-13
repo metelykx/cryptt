@@ -40,7 +40,7 @@ struct ShowInfoView: View {
                                     .bold()
                                     .padding(.top,geometry.size.height/20)
                             }
-                            VStack(alignment: .leading) {
+                            VStack(alignment: .leading, spacing: 10) {
                                 Text("Name: \(infos.name)")
                                     .padding(.trailing, geometry.size.height/4)
                                     .font(.title2)
@@ -48,7 +48,9 @@ struct ShowInfoView: View {
                                 
                                 Text("Supply: \(infos.supply)")
                                     .font(.title2)
-                                    .padding(.leading)
+                                    .padding(.leading).lineLimit(nil) // Разрешаем неограниченное количество строк
+                                    .fixedSize(horizontal: false, vertical: true) // Разрешаем вертикальное расширение
+                                    .multilineTextAlignment(.leading)
                                 
                                 Text("Max supply: \(infos.maxSupply!)")
                                     .font(.title2)
