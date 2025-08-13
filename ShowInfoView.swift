@@ -20,10 +20,8 @@ struct ShowInfoView: View {
                 
                 
                 VStack {
-                    ZStack {
-                        VStack {
-                            Text(infos.rank)
-                        }
+                    ZStack(alignment: .top) {
+  
                         Rectangle()
                             .frame(width: .infinity, height: geometry.size.height/2)
                             .cornerRadius(20)
@@ -31,6 +29,11 @@ struct ShowInfoView: View {
                             .padding(.horizontal)
                             .foregroundStyle(Color.gray.opacity(0.4))
                         
+                        
+                        Text(infos.rank)
+                            .bold()
+                            .font(.title)
+                            .padding(.top)
                         
                     }
                 }
