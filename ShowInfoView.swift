@@ -29,7 +29,7 @@ struct ShowInfoView: View {
                             .padding(.horizontal)
                             .foregroundStyle(Color.gray.opacity(0.4))
                         
-                        HStack{
+                        HStack {
                             Text(infos.rank)
                                 .bold()
                                 .font(.title)
@@ -38,7 +38,8 @@ struct ShowInfoView: View {
                             Text(infos.symbol)
                                 .font(.title)
                                 .bold()
-                                .padding(.top)
+                                .padding(.top,geometry.size.height/20)
+                            
                         }
                         
                     }
