@@ -18,6 +18,9 @@ struct ShowInfoView: View {
                 VStack {
                     Rectangle()
                         .frame(width: .infinity, height: geometry.size.height/2)
+                        .cornerRadius(20)
+                        .padding(.vertical)
+                        .padding(.horizontal)
                 }
             }
         }
