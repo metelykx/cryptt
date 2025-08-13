@@ -17,6 +17,11 @@ struct StaticView: View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading) {
                 Text("Statistics")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading)
+                    .padding(.top)
             }
         }
     }
