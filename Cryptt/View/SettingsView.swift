@@ -11,7 +11,9 @@ struct SettingsView: View {
     var body: some View {
         ZStack {
             GeometryReader { geometry in
-                f
+                VStack {
+                    
+                }
             }
         }
     }
