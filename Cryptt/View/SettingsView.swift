@@ -26,6 +26,7 @@ struct SettingsView: View {
                                 .foregroundStyle(.white)
                                 .padding(.top, geometry.size.height/20)
                                 .padding(.bottom, geometry.size.height/20)
+                                .padding(.trailing, geometry.size.height/20)
                         }.background(Color.blue)
                             
                             .frame(width:geometry.size.width / 2, height: geometry.size.height / 4)
