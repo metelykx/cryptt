@@ -139,6 +139,7 @@ struct StartView: View {
         }
         .navigationDestination(isPresented: $isAuth) {
             MainView()
+                .navigationBarBackButtonHidden(true)
         }
     }
     
