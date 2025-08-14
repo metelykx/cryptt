@@ -19,8 +19,13 @@ struct SettingsView: View {
                         
                         
                         
-                        Rectangle()
+                        RoundedRectangle(cornerRadius: 10)
                             .padding(.horizontal)
+                           
+                        
+                        
+                        
+                        
                         Button {
                             isTrue = true
                         }
