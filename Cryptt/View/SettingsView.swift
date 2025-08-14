@@ -60,7 +60,8 @@ struct SettingsView: View {
                                 Alert(title: Text("About Me"),
                                       message: Text("My name is metelykx! I am 19 years old. I wanna to work with Pavel Durov")
                                 )
-                            }
+                            }.padding(.top, geometry.size.height * 0.05) 
+                            
                             
                         
                         
