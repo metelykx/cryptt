@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct SettingsView: View {
+    
+    @State var isTrue = false
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -15,9 +18,17 @@ struct SettingsView: View {
                 GeometryReader { geometry in
                     VStack {
                         
+                        Button {
+                            isTrue = true
+                        } label: {
+                            Text("Who I am ?")
+                        }
+
+                        
+                        
                     }
                 }
-            }.navigationTitle(Text("Settings"))
+            }.navigationTitle(Text("About us"))
         }
     }
 }

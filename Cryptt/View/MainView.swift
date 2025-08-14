@@ -22,7 +22,7 @@ struct MainView: View {
                 }
             SettingsView()
                 .tabItem {
-                    Label("Settings", systemImage: "gearshape.fill")
+                    Label("Abous us", systemImage: "gearshape.fill")
                 }
         }
     }
