@@ -23,7 +23,7 @@ struct CrypttApp: App {
         WindowGroup {
             ZStack {
                 
-                RecordView()
+                MainView()
                     .opacity(isActive ? 1 : 0)
                     .animation(.default, value: isActive)
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)

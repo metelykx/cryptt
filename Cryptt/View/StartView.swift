@@ -144,36 +144,31 @@ struct StartView: View {
     
     // MARK: Functions
     private func auth() {
-        guard !name.isEmpty else {
-            isError = "Name cannot be empty"
-            return
-        }
-        guard !password.isEmpty else {
-            isError = "Password cannot be empty"
+        guard !name.isEmpty, !password.isEmpty else {
+            isError = "Заполните все поля"
             return
         }
         
-        let request = NSFetchRequest<Item>(entityName: "Item")
+        let request: NSFetchRequest<Item> = Item.fetchRequest()
         request.predicate = NSPredicate(
             format: "name == %@ AND password == %@",
-                name,
-                password
-            )
+            name,
+            password
+        )
         
         do {
-            let users = try managedObjectContextt.fetch(request)
-                
-            if users.isEmpty {
-                isError = "Invalid credentials"
+            let results = try managedObjectContextt.fetch(request)
+            if results.isEmpty {
+                isError = "Неверные данные"
             } else {
-                isError = nil
-                isAuth = true
+                isAuth = true // Триггер перехода
             }
         } catch {
-            isError = "Database error: \(error.localizedDescription)"
+            isError = "Ошибка базы данных: \(error.localizedDescription)"
         }
     }
 }
+
 
 #Preview {
     StartView()
