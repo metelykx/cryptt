@@ -21,6 +21,7 @@ struct SettingsView: View {
                         
                         RoundedRectangle(cornerRadius: 10)
                             .padding(.horizontal)
+                            .foregroundStyle(Color.gray.opacity(0.3))
                            
                         
                         
