@@ -20,9 +20,13 @@ struct SettingsView: View {
                         
                         Button {
                             isTrue = true
-                        } label: {
-                            Text("Who I am ?")
                         }
+                        label: {
+                            Text("Who I am ?")
+                                .foregroundStyle(.white)
+                        }.background(Color.blue)
+                            
+                            .frame(width:geometry.size.width / 2, height: geometry.size.height / 4)
 
                         
                         
