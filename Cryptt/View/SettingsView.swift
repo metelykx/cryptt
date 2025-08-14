@@ -20,9 +20,8 @@ struct SettingsView: View {
                         
                         ZStack {
                             
-                            Image("metelykx", bundle: nil)
-                                .resizable()
-                                .scaledToFit()
+                          
+                            
                             RoundedRectangle(cornerRadius: 10)
                                 .padding(.horizontal, geometry.size.height/20)
                                 .padding(.top, geometry.size.height/35)
@@ -32,7 +31,11 @@ struct SettingsView: View {
                             RoundedRectangle(cornerRadius: 10)
                                 .padding(.horizontal)
                                 .foregroundStyle(Color.gray.opacity(0.3))
-                                
+                            Image("metelykx", bundle: nil)
+                                .resizable()
+                                .scaledToFit()
+                                .padding(.top, geometry.size.height/35)
+                                .padding(.bottom, geometry.size.height/35)
                         }
                            
                         
