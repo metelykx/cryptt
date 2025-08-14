@@ -14,10 +14,12 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             ZStack {
-           
                 GeometryReader { geometry in
                     VStack {
                         
+                        
+                        
+                        Rectangle()
                         Button {
                             isTrue = true
                         }
