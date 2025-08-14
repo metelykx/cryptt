@@ -30,7 +30,7 @@ struct SettingsView: View {
                                 .foregroundStyle(Color.gray.opacity(0.3))
                             
                             RoundedRectangle(cornerRadius: 10)
-                                .padding(.horizontal)
+                                .padding(.horizontal, geometry.size.height / 20)
                                 .foregroundStyle(Color.gray.opacity(0.3))
                             Image("metelykx", bundle: nil)
                                 .resizable()
