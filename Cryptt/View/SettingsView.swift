@@ -28,8 +28,14 @@ struct SettingsView: View {
                                 .padding(.bottom, geometry.size.height/20)
                                 .padding(.trailing, geometry.size.height/20)
                                 .padding(.leading, geometry.size.height/20)
+                                .font(.title2)
+                                .bold()
                             
                         }.background(Color.blue)
+                            .cornerRadius(20)
+                            .padding(.bottom, geometry.size.height / 2)
+                            
+                        
                         
                     }.frame(width: geometry.size.width, height: geometry.size.height)
                     
