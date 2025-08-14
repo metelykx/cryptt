@@ -9,14 +9,15 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        ZStack {
-            NavigationView {
+        NavigationView {
+            ZStack {
+           
                 GeometryReader { geometry in
                     VStack {
                         
                     }
                 }
-            }
+            }.navigationTitle(Text("Settings"))
         }
     }
 }
