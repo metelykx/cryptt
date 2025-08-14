@@ -18,10 +18,16 @@ struct SettingsView: View {
                     VStack {
                         
                         
-                        
-                        RoundedRectangle(cornerRadius: 10)
-                            .padding(.horizontal)
-                            .foregroundStyle(Color.gray.opacity(0.3))
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .padding(.horizontal, geometry.size.height/20)
+                                .padding(.top, geometry.size.height/35)
+                                .foregroundStyle(Color.gray.opacity(0.3))
+                            RoundedRectangle(cornerRadius: 10)
+                                .padding(.horizontal)
+                                .foregroundStyle(Color.gray.opacity(0.3))
+                                
+                        }
                            
                         
                         
