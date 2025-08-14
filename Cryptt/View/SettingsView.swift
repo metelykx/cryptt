@@ -20,6 +20,7 @@ struct SettingsView: View {
                         
                         
                         Rectangle()
+                            .padding(.horizontal)
                         Button {
                             isTrue = true
                         }
