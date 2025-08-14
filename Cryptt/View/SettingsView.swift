@@ -28,13 +28,11 @@ struct SettingsView: View {
                                 .padding(.bottom, geometry.size.height/20)
                                 .padding(.trailing, geometry.size.height/20)
                                 .padding(.leading, geometry.size.height/20)
-                        }.background(Color.blue)
                             
-                            .frame(width:geometry.size.width / 2, height: geometry.size.height / 4)
-
+                        }.background(Color.blue)
                         
-                        
-                    }
+                    }.frame(width: geometry.size.width, height: geometry.size.height)
+                    
                 }
             }.navigationTitle(Text("About us"))
         }
