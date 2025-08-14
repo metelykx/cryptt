@@ -17,10 +17,7 @@ struct SettingsView: View {
                 GeometryReader { geometry in
                     VStack {
                         
-                        
                         ZStack {
-                            
-                          
                             
                             RoundedRectangle(cornerRadius: 10)
                                 .padding(.horizontal, geometry.size.height/8)
