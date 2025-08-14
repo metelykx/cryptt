@@ -23,9 +23,9 @@ struct SettingsView: View {
                           
                             
                             RoundedRectangle(cornerRadius: 10)
-                                .padding(.horizontal, geometry.size.height/20)
+                                .padding(.horizontal, geometry.size.height/8)
                                 .padding(.top, geometry.size.height/35)
-                                .padding(.bottom, geometry.size.height/35)
+                                .padding(.bottom, geometry.size.height/50)
                                 .foregroundStyle(Color.gray.opacity(0.3))
                             
                             RoundedRectangle(cornerRadius: 10)
