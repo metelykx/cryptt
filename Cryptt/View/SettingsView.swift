@@ -21,6 +21,8 @@ struct SettingsView: View {
                         ZStack {
                             
                             Image("metelykx", bundle: nil)
+                                .resizable()
+                                .scaledToFit()
                             RoundedRectangle(cornerRadius: 10)
                                 .padding(.horizontal, geometry.size.height/20)
                                 .padding(.top, geometry.size.height/35)
