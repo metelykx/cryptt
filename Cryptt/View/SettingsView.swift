@@ -10,9 +10,11 @@ import SwiftUI
 struct SettingsView: View {
     var body: some View {
         ZStack {
-            GeometryReader { geometry in
-                VStack {
-                    
+            NavigationView {
+                GeometryReader { geometry in
+                    VStack {
+                        
+                    }
                 }
             }
         }
