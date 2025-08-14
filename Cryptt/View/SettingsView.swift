@@ -34,6 +34,11 @@ struct SettingsView: View {
                         }.background(Color.blue)
                             .cornerRadius(20)
                             .padding(.bottom, geometry.size.height / 2)
+                            .alert(isPresented: $isTrue) {
+                                Alert(title: Text("About Me"),
+                                      message: Text("My name is metelykx! I am 19 years old. I wanna to work with Pavel Durov")
+                                )
+                            }
                             
                         
                         
